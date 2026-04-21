@@ -44,7 +44,7 @@ export default function Projects() {
         <ScrollReveal>
           <div className="mb-24">
             <p className="micro-label text-primary-500 mb-4 tracking-[0.3em]">Selected Engineering</p>
-            <h1 className="text-7xl font-bold tracking-tighter text-white">CASE STUDIES.</h1>
+            <h1 className="text-7xl font-bold tracking-tighter text-neutral-950 dark:text-white">CASE STUDIES.</h1>
           </div>
         </ScrollReveal>
 
@@ -78,25 +78,25 @@ export default function Projects() {
                   <div className={`lg:col-span-12 xl:col-span-5 ${i % 2 === 0 ? '' : 'xl:order-1'}`}>
                     <div className="inline-flex items-center gap-3 mb-6">
                       <span className="w-8 h-[1px] bg-primary-500" />
-                      <span className="micro-label text-white tracking-[0.2em]">{project.category}</span>
+                      <span className="micro-label text-neutral-950 dark:text-white tracking-[0.2em]">{project.category}</span>
                     </div>
                     <div className="flex items-center gap-4 mb-8">
-                      <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white leading-none uppercase">{project.title}</h2>
+                      <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-neutral-950 dark:text-white leading-none uppercase">{project.title}</h2>
                     </div>
-                    <p className="text-neutral-400 text-sm leading-relaxed mb-10 max-w-md">
+                    <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed mb-10 max-w-md">
                       {project.description}
                     </p>
                     
                     <div className="flex flex-wrap gap-2 mb-10">
                       {project.tags.map(tag => (
-                        <span key={tag} className="px-3 py-1 bg-neutral-900 border border-neutral-800 text-[10px] font-black uppercase tracking-widest text-neutral-500 rounded-full">
+                        <span key={tag} className="px-3 py-1 bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-[10px] font-black uppercase tracking-widest text-neutral-500 rounded-full">
                           {tag}
                         </span>
                       ))}
                     </div>
                     
                     <div className="flex items-center gap-10">
-                      <a href={project.link} className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-white border-b-2 border-primary-500 pb-1 hover:text-primary-500 hover:border-transparent transition-all">
+                      <a href={project.link} className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-neutral-950 dark:text-white border-b-2 border-primary-500 pb-1 hover:text-primary-500 hover:border-transparent transition-all">
                         Launch Project
                       </a>
                       <a href={project.github} className="flex items-center gap-2 text-neutral-500 hover:text-white transition-colors">
@@ -111,13 +111,13 @@ export default function Projects() {
         </div>
 
         <ScrollReveal>
-          <div className="mt-40 p-16 theme-card bg-neutral-900/10 text-center relative overflow-hidden">
+          <div className="mt-40 p-16 theme-card bg-neutral-50 dark:bg-neutral-900/10 text-center relative overflow-hidden">
             <div className="absolute top-0 left-0 w-2 h-full bg-primary-500" />
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white mb-8">INQUIRIES?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-neutral-950 dark:text-white mb-8">INQUIRIES?</h2>
             <p className="text-neutral-500 text-sm max-w-lg mx-auto mb-12 uppercase tracking-widest font-medium">
               Architecting tailored solutions for forward-thinking enterprises.
             </p>
-            <a href="/contact" className="inline-flex items-center gap-3 px-12 py-5 bg-white text-neutral-950 font-black text-xs uppercase tracking-[0.3em] hover:bg-primary-500 hover:text-white rounded-full transition-all shadow-2xl">
+            <a href="/contact" className="inline-flex items-center gap-3 px-12 py-5 bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 font-black text-xs uppercase tracking-[0.3em] hover:bg-primary-500 hover:text-white dark:hover:bg-primary-500 dark:hover:text-white rounded-full transition-all shadow-2xl">
               Engage Now <ArrowRight size={16} />
             </a>
           </div>

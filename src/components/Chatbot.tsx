@@ -26,7 +26,7 @@ function MessageBubble({ msg, isLoading, isLast, onRetry }: { msg: Message, isLo
               ? 'bg-primary-600 text-white rounded-tr-none font-medium' 
               : msg.isError
                 ? 'bg-red-500/10 text-red-500 rounded-tl-none border border-red-500/20'
-                : 'bg-neutral-900 text-neutral-300 rounded-tl-none border border-neutral-800/50'
+                : 'bg-neutral-100 dark:bg-neutral-900 text-neutral-800 dark:text-neutral-300 rounded-tl-none border border-neutral-200 dark:border-neutral-800/50'
           }`}
         >
           {msg.text || (isLoading && isLast ? <Loader2 className="animate-spin text-primary-500" size={14} /> : '')}
@@ -154,10 +154,10 @@ export default function Chatbot() {
             initial={{ opacity: 0, y: 20, scale: 0.95, transformOrigin: 'bottom right' }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="mb-6 w-[350px] sm:w-[380px] h-[600px] bg-neutral-950 rounded-[2.5rem] shadow-2xl flex flex-col overflow-hidden border border-neutral-800"
+            className="mb-6 w-[350px] sm:w-[380px] h-[600px] bg-white dark:bg-neutral-950 rounded-[2.5rem] shadow-2xl flex flex-col overflow-hidden border border-neutral-200 dark:border-neutral-800 transition-colors duration-300"
           >
             {/* Header */}
-            <div className="p-8 bg-neutral-900 flex justify-between items-center text-white border-b border-neutral-800">
+            <div className="p-8 bg-neutral-50 dark:bg-neutral-900 flex justify-between items-center text-neutral-950 dark:text-white border-b border-neutral-200 dark:border-neutral-800">
               <div className="flex items-center gap-3">
                 <div className="relative">
                   <motion.div 
@@ -216,12 +216,12 @@ export default function Chatbot() {
             </div>
 
             {/* Quick Prompts */}
-            <div className="px-6 py-4 flex gap-2 overflow-x-auto no-scrollbar border-t border-neutral-900 bg-neutral-950/50 backdrop-blur-sm">
+            <div className="px-6 py-4 flex gap-2 overflow-x-auto no-scrollbar border-t border-neutral-100 dark:border-neutral-900 bg-neutral-50/50 dark:bg-neutral-950/50 backdrop-blur-sm">
               {quickPrompts.map((prompt) => (
                 <button
                   key={prompt}
                   onClick={() => handleQuickPrompt(prompt)}
-                  className="whitespace-nowrap px-4 py-2 bg-neutral-900 border border-neutral-800 rounded-full text-[9px] font-bold uppercase tracking-widest text-neutral-500 hover:text-white hover:border-primary-500 transition-all active:scale-95"
+                  className="whitespace-nowrap px-4 py-2 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-full text-[9px] font-bold uppercase tracking-widest text-neutral-500 hover:text-neutral-950 dark:hover:text-white hover:border-primary-500 transition-all active:scale-95"
                 >
                   {prompt}
                 </button>
@@ -229,7 +229,7 @@ export default function Chatbot() {
             </div>
 
             {/* Input */}
-            <div className="p-8 border-t border-neutral-800 bg-neutral-950">
+            <div className="p-8 border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950">
               <div className="relative group">
                 <input
                   type="text"
@@ -237,7 +237,7 @@ export default function Chatbot() {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                   placeholder="Execute query..."
-                  className="w-full bg-neutral-900 border border-neutral-800 rounded-2xl py-5 pl-6 pr-16 text-[11px] text-white focus:outline-none focus:border-primary-500 transition-all font-medium"
+                  className="w-full bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl py-5 pl-6 pr-16 text-[11px] text-neutral-950 dark:text-white focus:outline-none focus:border-primary-500 transition-all font-medium"
                 />
                 <button
                   onClick={() => handleSend()}
