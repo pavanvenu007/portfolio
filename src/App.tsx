@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { AnimatePresence, motion, useScroll, useTransform } from 'motion/react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Chatbot from './components/Chatbot';
+//import Chatbot from './components/Chatbot';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
@@ -78,7 +78,7 @@ export default function App() {
           <Navbar />
           <AnimatedRoutes />
           <Footer />
-          <Chatbot />
+          {/* <Chatbot /> */}
         </div>
       </Router>
     </ThemeProvider>
